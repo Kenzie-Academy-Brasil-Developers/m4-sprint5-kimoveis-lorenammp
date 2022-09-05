@@ -7,9 +7,7 @@ export class User {
   @PrimaryColumn("uuid")
   readonly id: string;
 
-  @OneToMany((type) => Schedules, (schedule) => schedule.user, {
-    eager: true,
-  })
+  @OneToMany((type) => Schedules, (schedule) => schedule.user)
   schedule: User[];
 
   @Column()

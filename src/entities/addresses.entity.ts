@@ -9,7 +9,7 @@ export class Addresses {
   @Column()
   district: string;
 
-  @Column()
+  @Column({ length: 8 })
   zipCode: string;
 
   @Column()
@@ -18,7 +18,7 @@ export class Addresses {
   @Column()
   city: string;
 
-  @Column()
+  @Column({ length: 2 })
   state: string;
 
   constructor() {

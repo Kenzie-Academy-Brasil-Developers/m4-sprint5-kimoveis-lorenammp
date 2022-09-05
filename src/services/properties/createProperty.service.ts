@@ -51,6 +51,14 @@ const CreatePropertyService = async ({
     throw new AppError(404, "Invalid category id");
   }
 
+  if (address.zipCode.length > 8) {
+    throw new AppError(400, "Invalid ZipCode");
+  }
+
+  if (address.state.length > 2) {
+    throw new AppError(400, "Invalid state");
+  }
+
   const newAddress = new Addresses();
 
   newAddress.district = address.district;

@@ -6,7 +6,7 @@ const ListPropertiesController = async (req: Request, res: Response) => {
   try {
     const propertiesList = await ListPropertiesService();
 
-    return res.status(201).send(propertiesList);
+    return res.status(200).send(propertiesList);
   } catch (error) {
     if (error instanceof AppError) {
       handleError(error, res);

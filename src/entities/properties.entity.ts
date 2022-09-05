@@ -17,8 +17,8 @@ export class Properties {
   @PrimaryColumn("uuid")
   readonly id: string;
 
-  @ManyToOne((type) => Categories, (category) => category.property)
-  category?: Categories;
+  @ManyToOne((type) => Categories, (category) => category.properties)
+  category: Categories;
 
   @OneToOne((type) => Addresses, {
     eager: true,
@@ -26,9 +26,7 @@ export class Properties {
   @JoinColumn()
   address: Addresses;
 
-  @OneToMany((type) => Schedules, (schedule) => schedule.property, {
-    eager: true,
-  })
+  @OneToMany((type) => Schedules, (schedule) => schedule.property)
   schedule: Properties[];
 
   @Column({ default: false })

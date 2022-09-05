@@ -10,7 +10,7 @@ export class Categories {
   @OneToMany((type) => Properties, (property) => property.category, {
     eager: true,
   })
-  property: Properties[];
+  properties: Properties[];
 
   @Column({ unique: true })
   name: string;

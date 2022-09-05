@@ -20,14 +20,18 @@ export class Schedules {
   // property: Properties[];
   // propertyId: Properties;
 
-  @ManyToOne((type) => User, (user) => user.schedule)
+  @ManyToOne((type) => User, (user) => user.schedule, {
+    eager: true,
+  })
   user: User;
 
-  @ManyToOne((type) => Properties, (property) => property.schedule)
+  @ManyToOne((type) => Properties, (property) => property.schedule, {
+    eager: true,
+  })
   property: Properties;
 
-  @Column()
-  date: Date;
+  @Column({ type: "date" })
+  date: string;
 
   @Column({ type: "time" })
   hour: string;

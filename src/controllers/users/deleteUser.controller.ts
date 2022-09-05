@@ -4,7 +4,7 @@ import DeleteUserService from "../../services/users/deleteUser.service";
 
 const DeleteUserController = async (req: Request, res: Response) => {
   try {
-    const id = req.userId;
+    const id = req.params.id;
 
     if (!req.isAdm) {
       return res.status(403).send({
@@ -12,9 +12,9 @@ const DeleteUserController = async (req: Request, res: Response) => {
       });
     }
 
-    const userList = await DeleteUserService({ id });
+    const user = await DeleteUserService({ id });
 
-    return res.status(204).send(userList);
+    return res.status(204).send(user);
   } catch (error) {
     if (error instanceof AppError) {
       handleError(error, res);

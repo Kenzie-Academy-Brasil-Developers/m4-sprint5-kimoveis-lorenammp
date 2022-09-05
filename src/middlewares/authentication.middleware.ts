@@ -22,7 +22,7 @@ const AuthenticationMiddleware = (
       (err: any, decoded: any) => {
         req.userEmail = decoded.email;
         req.isAdm = decoded.isAdm;
-        req.userId = req.params.id;
+        req.userId = decoded.sub;
         next();
       }
     );

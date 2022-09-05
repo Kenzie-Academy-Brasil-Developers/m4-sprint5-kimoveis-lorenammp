@@ -27,4 +27,10 @@
 		"state": "Cape Town"
 	},
 	"categoryId": "5"
+},
+{
+    "date": "2022/09/12",
+    "hour": "10:30",
+    "propertyId": "",
+    "userId": ""
 }
